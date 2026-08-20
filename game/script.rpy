@@ -1,0 +1,464 @@
+# -------------------------------------------------------------------------------------------
+# ELEANOR: CHILDREN OF THE HARVEST
+# A standalone mystery in the SmokeJaguar universe
+# SmokeJaguar Studios
+# -------------------------------------------------------------------------------------------
+#
+# CHARACTER DEFINITIONS
+# -------------------------------------------------------------------------------------------
+define e = Character("Eleanor", color="#c8a2c8")
+define n = Character("Neith", color="#e8d8e8")
+define m = Character("Maren Holt", color="#d4a373")
+define v = Character("The Vicar", color="#8fb3a8")
+define ch = Character("The Child", color="#e8d8e8")
+define mil = Character("The Miller", color="#8a6a4a")
+define sch = Character("The Schoolteacher", color="#6a8a8a")
+define old = Character("Old Nan", color="#a8a8a8")
+define inn = Character("The Innkeeper", color="#c8a2c8")
+define om = Character("The Old Man", color="#a8a8a8")
+
+# -------------------------------------------------------------------------------------------
+# IMAGE ALIASES
+# -------------------------------------------------------------------------------------------
+image bg mansion_ext = "images/backgrounds/bg_mansion_restored.webp"
+image bg hallway = "images/backgrounds/bg_hallway.webp"
+image bg library = "images/backgrounds/bg_library.webp"
+image bg village = Solid("#3a3a3a")
+image bg village id = Solid("#2a2a2a")
+image bg chapel = Solid("#1a1a2a")
+image bg inn = Solid("#4a3a2a")
+image eleanor_neutral = Solid("#c8a2c8")
+image eleanor_determined = Solid("#c8a2c8")
+image neith_neutral = Solid("#e8d8e8")
+image maren = Solid("#8a6a4a")
+image vicar = Solid("#4a6a4a")
+image miller = Solid("#7a5a3a")
+image schoolteacher = Solid("#5a7a7a")
+image oldnan = Solid("#9a9a9a")
+image innkeeper = Solid("#c8a2c8")
+
+# -------------------------------------------------------------------------------------------
+# CUSTOM TRANSITIONS
+# -------------------------------------------------------------------------------------------
+define slow_dissolve = Dissolve(1.5)
+define slow_fade = Fade(1.0, 0.5, 1.0)
+define flash = Fade(0.1, 0.0, 0.5, color="#ffffff")
+
+# The quick-menu has an inventory button; define the list so the screen doesn't crash.
+default inventory = []
+
+# -------------------------------------------------------------------------------------------
+# GAME START
+# -------------------------------------------------------------------------------------------
+label start:
+    jump episode_five
+
+label episode_five:
+    # Game State
+    $ clue_vicar = False
+    $ clue_well = False
+    $ harrow_truth = False
+    $ truth_miller = False
+    $ truth_school = False
+    $ truth_nan = False
+
+    scene bg hallway
+    with slow_fade
+
+    "There are some letters you open knowing you will regret it. This one had been waiting on the table all morning, the ink smeared, the paper creased from a hand that had held it too tightly."
+
+    "It was not addressed to us by name. It was addressed to 'the ladies who solve things.'"
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "You've read it twice."
+
+    e "Because I'm hoping I misread it the first time."
+
+    n "What does it say?"
+
+    e "It says a village in the north has a problem. And that it has had this problem, on and off, for two hundred years. And that it is coming round again."
+
+    n "What kind of problem?"
+
+    e "The kind the village does not call by its name."
+
+    "The letter was postmarked from a village in Somerset called Grimshade. I had never heard of it, and that, more than anything, unsettled me. Somerset was full of old names and older stories, and a village that had kept itself out of the maps for two hundred years was a village that had something to hide."
+
+    n "It is more than a day's journey, Eleanor. We will not reach it before nightfall."
+
+    e "Then we will find a bed on the road, and reach it in the morning."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}EPISODE FIVE — CHILDREN OF THE HARVEST{/color}{/size}"
+
+    pause 1.5
+
+    scene bg inn
+    with slow_fade
+
+    "The inn was called the Hanged Man, which told you most of what you needed to know about the road it stood on. It was a low, timbered building at a crossroads, its sign creaking in the wind, its windows glowing amber against the gathering dark."
+
+    "We had been on the road since mid-morning, and the miles had worn the day down to a grey thread. The inn was the first light we had seen in hours."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "A cheerful name."
+
+    e "The best inns always have the worst names. It keeps the timid away."
+
+    "Inside, the Hanged Man was warm and close, full of the smell of woodsmoke and ale and the low murmur of voices. A fire burned in a great hearth, and around it, a handful of locals sat with their pipes and their pints, the way men do when the night is long and the stories are old."
+
+    show innkeeper at center
+    with dissolve
+
+    "The innkeeper was a broad, ruddy woman with arms like a blacksmith's and the watchful eyes of someone who had heard every tale the road could bring. She set two tankards before us without being asked."
+
+    inn "You are a long way from anywhere, ladies. What brings you to the Hanged Man?"
+
+    e "We are bound for Grimshade, in the morning."
+
+    "The room went quiet. Not suddenly—the way a room goes quiet when everyone in it decides, at the same moment, not to speak."
+
+    inn "Grimshade. Aye. That is a name we do not say lightly on this road."
+
+    n "Why not?"
+
+    "The innkeeper looked at us for a long moment. Then she leaned in, and her voice dropped."
+
+    inn "Because the road to Grimshade is a road that does not like to be travelled, ladies. And the village at the end of it is a village that does not like to be found. There are stories."
+
+    e "What stories?"
+
+    "She glanced at the fire, and the men around it had gone very still, their eyes on their pints."
+
+    inn "They say the village made a bargain, long ago, with something that lives under the hill. And that every so often, it comes due. They say the wells run dry and the fields go grey, and then—"
+
+    "She stopped, and shook her head."
+
+    inn "No. I will not tell it. Some stories are not for telling to strangers who mean to walk into them."
+
+    "A man by the fire—old, with a face like a walnut—spoke up, his voice cracked with age."
+
+    om "But there is another story, if you want one. A different one. About a house on the far side of the county, and a thing that was buried and should have stayed buried."
+
+    "I felt Neith go still beside me."
+
+    e "What house?"
+
+    "The old man smiled, showing a gap in his teeth."
+
+    om "They call it the Hollow House. It stands empty now, on the edge of the moors, and they say a family lived there once who made a bargain of their own. They say the bargain is still there, waiting, and that it has been waiting a very long time."
+
+    "The fire popped. The innkeeper straightened, and the moment broke."
+
+    inn "Enough of that. You will want beds, and you will want them before the road turns cold. I will have the girl make up the rooms."
+
+    "She led us up the narrow stairs, and at the top she paused, a little apologetic."
+
+    inn "I am sorry, ladies. It is a busy night, and I have only the one room left. It is a good room, mind—a double bed, and a fire. But it is only the one."
+
+    "I felt Neith glance at me, and I did not look back. There was a beat of silence, the kind that says more than words, and then I spoke, keeping my voice even."
+
+    e "That will be fine. Thank you."
+
+    "The innkeeper looked between us, and something in her face softened—not with surprise, but with a quiet, knowing warmth, the way people look when they recognise a thing they have seen before."
+
+    inn "Aye. I thought it might be."
+
+    "She left us at the door, and we stood in the narrow corridor, the firelight spilling from the room, and neither of us moved for a moment."
+
+    n "She knows."
+
+    e "She has been running this inn a long time. She has seen everything."
+
+    n "And she was not surprised."
+
+    "I looked at her then, in the low light, and I did not need to say anything. Three years, and the sight of her still steadied me. The room was small, and the bed was one, and it was not a thing we had to explain to anyone."
+
+    e "Come on. The road is long tomorrow."
+
+    "She smiled, and followed me in, and the door closed on the quiet of the inn."
+
+    scene black
+    with slow_fade
+
+    "That night, in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grimshade was the only road we were walking."
+
+    "Beside me, Neith slept, and the warmth of her was a steady thing in the cold of the night. Whatever the road held, I would not walk it alone."
+
+    scene bg village
+    with slow_fade
+
+    "The village was called Grimshade, and it earned the name. It sat in a fold of grey hills like something that had been there too long and meant to stay, its houses crouched around a single square and a well that had not been used in living memory."
+
+    "The rain did not so much fall as hang. The streets were empty, though it was mid-morning, and the windows we passed were shuttered."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "This is not a village that wants visitors."
+
+    e "It is not a village that wants to be looked at."
+
+    "We had come at the request of a woman's letter, and a mother's hope. A child had gone missing six weeks ago. The child had not been found, and the village had stopped searching. That was the part that had brought us."
+
+    "The door we knocked on belonged to the last person who had written to anyone in authority. Her name was Maren Holt."
+
+    show maren at center
+    with dissolve
+
+    m "You came. I did not think you would come."
+
+    e "You asked us to. The letter was very plain."
+
+    m "The village does not talk about it, ladies. But it is due. It is due tonight, and they have taken her."
+
+    n "Taken who?"
+
+    m "They will not say. They stopped saying years ago. But my sister's girl, she is the seventh. There have always been seven, every nine years, since the village was a village."
+
+    "She said it the way people say a thing they have learned to survive by saying flat."
+
+    m "They call it the Harvest. They do not call it by its true name, and they have agreed, all of them, to look at it out of the corners of their eyes."
+
+    n "Maren. What is under the well?"
+
+    "She flinched. It was a small flinch, but in the stillness of that room, it was loud."
+
+    m "No one speaks of the well."
+
+    e "And yet here we are."
+
+    "Maren looked at us for a long moment, and I saw the war in her—the fear of the thing, and the fear of what the village would do to her for speaking. She had already chosen, by writing that letter. But the choosing had cost her."
+
+    n "Maren. We will not let them take her. But we need to understand what we are facing. What is under the well?"
+
+    "She shook her head slowly, the way you shake your head at a thing you have spent a lifetime refusing to name."
+
+    m "I do not know. No one knows. It has been there longer than the village. But there are those who remember the old stories—the miller, the schoolteacher, old Nan. They will not speak to the village. But they might speak to you."
+
+    e "Why would they?"
+
+    m "Because you are not from here. You have not agreed to look away. That is the only thing that has ever made anyone in Grimshade speak."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE VILLAGE{/color}{/size}"
+
+    pause 1.5
+
+    scene bg village
+    with slow_fade
+
+    "We walked the streets of Grimshade, and the village walked away from us."
+
+    "It was not a cruelty, not exactly. It was a reflex, worn smooth by generations. A woman gathering washing from a line saw us and turned her back, slowly, as if we were not there. A man mending a fence stopped, looked at the ground, and went inside. The doors did not slam. They simply closed."
+
+    "That was the thing I would come to understand about Grimshade. It did not hate. It did not even fear, not in the way you could name. It had simply learned, a long time ago, that the safest thing to do with a stranger was to become, all at once, a village of empty windows."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "They are not hiding from us, Eleanor. They are hiding from the thing they have agreed to feed."
+
+    e "And from the part of themselves that knows it is wrong."
+
+    n "Yes. That is the part that is hardest to live with. So they have buried it, and they call the burial peace."
+
+    "I looked at her, and I felt the weight of what she was saying. She had spent a century in the Duat, watching souls weigh their own hearts. She knew what it cost a person to look away from the thing they had done."
+
+    e "How do you live with it, Neith? The knowing?"
+
+    "She was quiet for a moment. The rain hung in the air, and the village held its breath around us."
+
+    n "I do not live with it by looking away. I live with it by looking, and choosing, every day, not to be the thing I saw."
+
+    "She met my eyes, and in the grey light, hers were steady."
+
+    n "That is the only way, Eleanor. You cannot unsee a thing. You can only decide, each time, what you will do with what you have seen."
+
+    "I reached out and took her hand. It was warm, and it steadied me in a way I could not have named."
+
+    e "Then let us look. And let us decide."
+
+    "We turned toward the village, and the old voices."
+
+    # --- Investigation loop: visit the three old voices in any order ---
+    label ep5_investigate:
+        if truth_miller and truth_school and truth_nan:
+            jump ep5_all_truths
+
+        menu:
+            "Talk to the miller about the bargain" if not truth_miller:
+                jump ep5_miller
+            "Talk to the schoolteacher about the records" if not truth_school:
+                jump ep5_school
+            "Talk to Old Nan about the truth" if not truth_nan:
+                jump ep5_nan
+            "You have learned all the truths — go to the well" if truth_miller and truth_school and truth_nan:
+                jump ep5_all_truths
+
+        jump ep5_investigate
+
+    label ep5_miller:
+        scene bg inn
+        with slow_fade
+
+        "The miller was a broad, grey man who had outlived his mill and most of his patience. He did not invite us in. He stood in the doorway, blocking the light, and he looked at us the way you look at a debt you had hoped was forgotten."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        show miller at center
+        with dissolve
+
+        mil "You are the ones. The ones who came to open the well."
+
+        e "We came to find a child."
+
+        "He was silent for a long moment. Then he stepped aside, and let us in."
+
+        mil "The child is not the first. And she will not be the last, unless you are very lucky, or very foolish. Sit. I will tell you what the village does not say."
+
+        "He poured three cups of something dark and bitter, and he did not drink his."
+
+        mil "The thing in the well is not a thing. It is a *debt*. A bargain, made before the village was a village, by a man who wanted the land to be fertile and the rain to come."
+
+        e "A bargain with what?"
+
+        mil "With the thing that was already here. It was here before the first stone was laid. It is not a god, and it is not a devil. It is older than both, and it is hungry, and it has learned, over the centuries, to be patient."
+
+        n "And the price?"
+
+        "The miller looked at the floor."
+
+        mil "The price was always the same. What the land could not give, the village gave instead. Every nine years, one of the young. It was the only way the land stayed green."
+
+        e "And you have kept this. For two hundred years."
+
+        mil "We have kept it because we were afraid not to. And because it was easier, each time, to tell ourselves it was the only way. That is the lie at the heart of it, ladies. It was never the only way. It was just the easiest."
+
+        "He reached into his coat and drew out an old, creased ledger."
+
+        mil "The seal on the well—it is not held by weight. It is held by the *debt*. The first bargain set a price, and the stone was set to keep it. That is the first truth of the well: you cannot lift it by force. Only by the truth."
+
+        e "Which truth?"
+
+        mil "That it is a debt, not a god. And debts can be refused."
+
+        $ truth_miller = True
+
+        "The miller's truth settled in me, cold and clear."
+
+        jump ep5_investigate
+
+    label ep5_school:
+        scene bg village
+        with slow_fade
+
+        "The schoolteacher was a thin, precise woman who kept the village's records and its conscience, in that order. She met us in the churchyard, among the graves, and she did not pretend we were welcome."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        show schoolteacher at center
+        with dissolve
+
+        sch "You have been to the miller. He told you the bargain."
+
+        e "He told us the price. He did not tell us what the thing is."
+
+        "She looked at the graves, and her voice was quiet."
+
+        sch "The records go back two hundred years, ladies. Every nine years, a name. Always a young one. Always the same season. I have kept the records, and I have never once written a cause of death, because there is no cause that the village will admit."
+
+        n "And the thing itself?"
+
+        sch "The oldest record calls it the *first hunger*. It was here before the village, before the church, before the land was cleared. The first settlers did not find a valley. They found a thing that was already waiting, and they made a bargain with it because they were afraid."
+
+        e "And the bargain has never been broken?"
+
+        "She was silent for a long moment. Then she looked at me, and there was something in her eyes I had not expected—a thin, tired hope."
+
+        sch "It has never been broken because no one has ever been brave enough to try. But the records hold a second truth, ladies. The seal has weakened before—whenever the truth is spoken aloud. It moves. It does not hold because of iron. It holds because of silence."
+
+        "She tapped the oldest page of the ledger."
+
+        sch "The second truth: the stone lifts when the truth is named. Keep it silent, and it is heavier than a mountain. Name it, and it becomes nothing more than a stone."
+
+        e "You have read it. In the records."
+
+        sch "I have read it a hundred times, and I have never said it aloud, because to say it is to begin. But you—you can say what I could not."
+
+        $ truth_school = True
+
+        "The schoolteacher's truth settled in me, the second key."
+
+        jump ep5_investigate
+
+    label ep5_nan:
+        scene bg village id
+        with slow_fade
+
+        "Old Nan's cottage was the oldest in the village, a crooked, smoke-blackened thing that seemed to have grown out of the ground rather than been built on it. She was waiting for us at the door, and she did not look surprised to see us."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        show oldnan at center
+        with dissolve
+
+        old "You have come about the well. I have been waiting for you for sixty years."
+
+        e "You knew we would come?"
+
+        old "I knew someone would, one day. The village has been waiting too, though it does not know it. It has been waiting for someone to say the thing it has been afraid to say."
+
+        n "What is the thing, Nan?"
+
+        "She looked at us, and her eyes were old and clear, and terrible."
+
+        old "The thing in the well is not a thing at all. It is a *name*. A name that was spoken once, in fear, and that has been fed ever since. It has no body of its own. It is made of the fear the village gives it, and the silence, and the children."
+
+        e "Then how do you end it?"
+
+        "Old Nan smiled, and it was not a kind smile."
+
+        old "You do not feed it. That is the only way. You stop giving it the thing it needs, and it starves. But the village will not stop, because the village is afraid. And fear is the thing that keeps it alive."
+
+        "She reached out and took my hand, and her grip was surprisingly strong."
+
+        old "The third truth, child. To lift the seal, you must name the fear without flinching. The stone is not heavy. It is held down by the weight of what the village will not say. Speak it, and the stone becomes as light as a word."
+
+        e "And if I name it wrong?"
+
+        old "Then it will know you are afraid, and it will not move. You must mean it. Not for a woman you have not met. For the truth of what is down there. When you mean it, it will break."
+
+        $ truth_nan = True
+
+        "Old Nan's truth, the last of the three, settled into me."
+
+        jump ep5_investigate
+
+    label ep5_all_truths:
+        "Three truths now lay in me, clear as the rain. The deed, the word, and the fear. The miller's debt. The schoolteacher's silence. Old Nan's name."
+
+        scene black
+        with slow_fade
+
+        centered "{size=+6}{color=#d4a373}THE WELL{/color}{/size}"
+
+        pause 1.5
+
+        scene bg village id
+        with slow_fade
+
+        "The well sat in the centre of the square, capped with a stone lid so heavy it must have taken six men to lift. It was not the sort of thing you put over a well you meant to use again."
+

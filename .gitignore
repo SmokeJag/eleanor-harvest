@@ -1,0 +1,17 @@
+*.rpyc
+*.rpymc
+cache/
+game/cache/
+saves/
+game/saves/
+traceback.txt
+errors.txt
+log.txt
+.DS_Store
+__MACOSX/
+._*
+*.swp
+*.tmp
+*.bak
+dist/
+build/
