@@ -462,3 +462,281 @@ label episode_five:
 
         "The well sat in the centre of the square, capped with a stone lid so heavy it must have taken six men to lift. It was not the sort of thing you put over a well you meant to use again."
 
+        "But I had not come to lift it with strength. I had come to lift it with the truth."
+
+    "The vicar was waiting for us. He had been, I suspect, since he saw the carriage arrive. He was a thin, greying man, and he wore his authority the way a man wears a coat that is too warm for the season."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    show vicar at center
+    with dissolve
+
+    v "You will not open that well, ladies."
+
+    e "And who are you to tell us?"
+
+    v "I am the man who keeps the peace of this village. And that well is not a well. It is a promise."
+
+    n "A promise to what?"
+
+    v "To something older than the church. Older than the village. Something that was here when the first stones were laid, and that we have agreed, all of us, to keep fed."
+
+    e "Fed."
+
+    v "The harvest. It was every nine years, once. Now the interval is shorter. We do not know why."
+
+    e "You 'we.' You know what happened to the child."
+
+    "The vicar's mouth was a thin line."
+
+    v "We do not speak of what happens to the harvest, ladies. We speak only of what it buys us. The rain. The harvest of the fields. The village that survives another nine years."
+
+    "And I understood, with a coldness that had nothing to do with the rain, that he was not a monster. He was a man who had been taught, from birth, to look away."
+
+    n "And if we refuse to let it happen?"
+
+    v "Then we have two choices. And I promise you, ladies, you will not like either of them."
+
+    menu:
+        "Open the well — face what the village feeds":
+            jump well_opened
+
+        "Follow the child instead — find her before the harvest":
+            jump follow_the_child
+
+    return
+
+label well_opened:
+    "I looked at the vicar, and I did not blink."
+
+    e "Show me the well."
+
+    "We stood before the stone, and I felt the three truths in me—the debt, the word, the fear."
+
+    "The vicar watched, and his voice was low."
+
+    v "You cannot lift it, lady. It has taken six strong men before, and it did not move."
+
+    e "It was never a matter of strength. It was a matter of what you will not say."
+
+    "I spoke it then, plainly and without flinching."
+
+    e "This is not a harvest. It is a debt, and you have been feeding it your children for two hundred years because you were afraid to refuse it. I am not afraid. I name it, and I refuse it."
+
+    "The stone shivered. It had never heard its own name before."
+
+    with flash
+
+    "The seal rose from the well as if it were no heavier than a word, and the smell came up out of it. It was not the smell of water. It was the smell of something that had been fed for a very long time and had never been cleaned."
+
+    "The walls of the well went down and down, and at the bottom, glinting faintly, was a thing that was not a stone."
+
+    with flash
+
+    "It looked up at us. And it opened its mouth."
+
+    "It was not screaming. It was the more terrible thing. It was singing—an old, cracked sound—and it sang with the voices of a hundred children."
+
+    $ well_opened = True
+
+    e "Neith. Do not look at it."
+
+    n "I am looking at it. It has been down here. The people have been feeding it."
+
+    "The vicar was behind us, and his voice was grey."
+
+    v "You have opened it. Now it knows it is seen. You have brought the harvest forward."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE CHILD{/color}{/size}"
+
+    pause 1.5
+
+    jump the_harvest
+
+label follow_the_child:
+    "I did not look at the well. I looked at the vicar, and I made a choice."
+
+    e "You will not take her tonight. Where have you been?"
+
+    v "The harvest is taken the night before the first frost."
+
+    n "Tonight is the first frost."
+
+    "The vicar said nothing. But his eyes went to a path that ran out of the square, over a low stone wall, and into the dark of the valley."
+
+    "We followed it. The path led to a small, locked chapel at the edge of the village, and in a cellar beneath it, with a lantern, we found her."
+
+    "The child was huddled in the corner. She did not scream when she saw us. She had stopped hoping for rescue a long time ago."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "We are going to get you out of here. Do you understand?"
+
+    "She shook her head. And her voice, when it came, was small and flat."
+
+    ch "They will not let you. The thing in the well will not let me go. It is why they keep me."
+
+    n "Who is 'they'?"
+
+    ch "Everyone. It is everyone, but no one. They are the village. And they will not let you take me, because if I go, it will be hungry."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE CHILD{/color}{/size}"
+
+    pause 1.5
+
+    jump the_harvest
+
+label the_harvest:
+    scene bg village id
+    with slow_fade
+
+    "The square had filled. Not with a crowd. With a silence. Every house had sent a face, and every face was turned toward the well, and none of them was looking at us."
+
+    "The vicar stood at the centre. And the whole village, it seemed, had been waiting for the moment the well was disturbed to begin."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "Eleanor. They mean to do it now. They will not wait for the frost."
+
+    v "It has been opened. It must be fed. You have brought the harvest early."
+
+    e "The harvest is not a child. It is a name you have given to a thing you are ashamed to do. And every one of you, standing here, knew."
+
+    "No one moved. No one looked at me. That was the worst of it. They were not cruel men. They were men who had agreed, together, that not looking was a kindness."
+
+    "And in that was the true horror of it. The thing in the well was not the monster. The monster was the whole village, having decided it could live with the thing in the well, if only it did not have to watch."
+
+    menu:
+        "Stand against the whole village — make them see the child":
+            jump face_the_village
+
+        "Take the child and run — get her out of the valley":
+            jump run_with_the_child
+
+    return
+
+label face_the_village:
+    "I walked into the middle of them. The ones who had come to feed the well. I carried the child, and I made them look at her."
+
+    e "This is her. She has a name, and a life, and a future you have decided she does not have. And I will not let you do it."
+
+    "The vicar voice was quiet."
+
+    v "You do not understand. If we do not feed it, it will take everything. The village will starve. The wells will run dry. We have kept this."
+
+    e "You have kept something that has made you afraid, for two hundred years. And you are so afraid that you have made a child the price of your fear."
+
+    "No one spoke. And then, at the back, a woman spoke. It was Maren Holt."
+
+    m "She is right. We are so afraid of the thing we made we will not see a child. And I will not be afraid anymore."
+
+    "One voice. And then another. And the ring of faces began to break, not all at once, but in pieces, like a wall that has been holding too much."
+
+    with flash
+
+    "And at the moment the village broke, the well behind us opened, and the thing that had been fed came up out of it."
+
+    jump the_well_thing
+
+label run_with_the_child:
+    "I did not argue. I took the child's hand, and I ran. Not toward the houses, but away, across the wall, into the dark of the valley, Neith at my side, and the village behind us did not follow."
+
+    "They let us go. They let us go, and that was almost the worst of it, because it meant the child was not the one they truly wanted. They wanted the thing to stay, and they would feed it anything else."
+
+    "We carried her out of the valley, and by morning, we were on the road, and she was free."
+
+    jump harvest5
+
+label the_well_thing:
+    "It came up out of the ground the way rot comes up out of a wound. It did not have a fixed shape—it had the shape of a hunger that had been a name for too long."
+
+    with flash
+
+    "And I saw that I could end it. Not by running, and not by leaving, but by the choice it could not make and the village could not make for me."
+
+    "I walked to the edge of the well, and I spoke the words that the jaguar had taught me, the ones that unmake."
+
+    "And the thing in the well, that had fed for two hundred years, did not know how to refuse a will that was not afraid of it."
+
+    with flash
+
+    "It did not scream. It was far worse, it came apart the way a thing that has been held together only by fear comes apart. Slowly, and in pieces, and with a sound like the worst note of a song."
+
+    "And when it was gone, the village was silent, and the well was only a well."
+
+    jump harvest5
+
+label harvest5:
+    scene bg hallway
+    with slow_fade
+
+    "We left Grimshade at dawn. The rain had stopped, and the road was clear, and we did not look back."
+
+    "I do not think the village will ever be quite the same. But I do not know if that is a comfort, or a wound. Some things, once seen, cannot be unseen—and the village has seen itself now, in the light of what it was willing to do."
+
+    "We drove in silence for a long time. The hills greyed and fell away behind us, and the world opened out into the ordinary morning of the rest of the country, where children went to school and wells were only wells."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "You are thinking of her."
+
+    e "I am. Maren's niece. She will carry it. That is the part they do not tell you about the village, that even when you save them, the saving has a price."
+
+    n "What price?"
+
+    "I looked out at the passing fields, and I felt the weight of the morning."
+
+    e "The child will grow up knowing the village was willing to give her to the well. That is not a thing you forget. And the village will grow up knowing it was willing to do it. That is not a thing *they* forget, either."
+
+    "Neith was quiet for a long moment. The carriage rocked, and the road unwound."
+
+    n "You cannot save them from the knowing, Eleanor. You can only save them from the doing. And you did that."
+
+    e "Did I? Or did I just make them afraid of a different thing?"
+
+    "She turned to look at me, and in the grey light, her eyes were steady and kind."
+
+    n "You made them afraid of the truth of what they were. That is a fear worth having. It is the only fear that has ever made anyone change."
+
+    "I looked at her, and I felt the weight of it lift, just a little. Not because the morning was easy. But because I was not carrying it alone."
+
+    e "How do you do it, Neith? Carry the knowing, and not let it break you?"
+
+    "She was quiet. Then she reached across and took my hand."
+
+    n "I do not carry it alone. That is the whole secret, Eleanor. I have you. And you have me. And between us, we can carry almost anything."
+
+    "I held her hand, and I felt the truth of it settle in me. The village would carry its shame, and the child would carry her fear, and the world would go on being the world. But we would carry it together."
+
+    e "Then let us carry it together. All of it."
+
+    "She smiled—a small, tired, real smile."
+
+    n "We already do."
+
+    "We drove on into the morning, the two of us, and the road ahead was long, and the world was heavy, and it did not matter, because we were not alone in it."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+8}{color=#c8a2c8}The Mansion Mysteries will continue...{/color}{/size}"
+
+    pause 2.0
+
+    centered "{size=+6}{color=#d4a373}END OF EPISODE FIVE{/color}{/size}"
+
+    pause 2.0
+
+    return
