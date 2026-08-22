@@ -842,7 +842,11 @@ label run_with_the_child:
 
     "We carried her out of the valley, and by morning, we were on the road, and she was free."
 
-    jump harvest5
+    "We did not look back at Grimshade. The hunger was still down there, in the well, and the village would feed it again, or starve it, or find their courage in their own time. That was not a fight we could carry out of the valley with a child in our arms."
+
+    "We had done the one thing we came to do. And we had to trust that was enough."
+
+    jump ending_epilogue
 
 label the_well_thing:
     "It came up out of the ground the way rot comes up out of a wound. It did not have a fixed shape—it had the shape of a hunger that had been a name for too long."
@@ -851,6 +855,20 @@ label the_well_thing:
 
     "And I saw that I could end it. Not by running, and not by leaving, but by the choice it could not make and the village could not make for me."
 
+    if beast_seen and beast_clue and neith_trust >= 2:
+        "And as I stood at the edge of the well, I remembered the black shape on the moor, and the ledger's old note—*the beast remembers the bargain.* I had dismissed it as a story. But Neith had believed it. And I had trusted her."
+
+        menu:
+            "Speak the words that unmake the hunger":
+                jump unmake_the_hunger
+            "Call the Beast of the moors":
+                jump the_beast_path
+
+        jump unmake_the_hunger
+    else:
+        jump unmake_the_hunger
+
+label unmake_the_hunger:
     "I walked to the edge of the well, and I spoke the words that the jaguar had taught me, the ones that unmake."
 
     "And the thing in the well, that had fed for two hundred years, did not know how to refuse a will that was not afraid of it."
@@ -861,15 +879,46 @@ label the_well_thing:
 
     "And when it was gone, the village was silent, and the well was only a well."
 
-    jump harvest5
+    jump ending_unmaking
 
-label harvest5:
+label the_beast_path:
+    "I did not speak the words that unmake. I stepped to the edge of the well, and I did not name the hunger."
+
+    "I called the thing that the village had been afraid to name, and that I had seen on the moor, black against the grey."
+
+    "I called the Beast."
+
+    "For a moment, nothing. The village stared, and the hunger coiled in the dark, and I felt the gamble of it like a stone in my throat."
+
+    "And then the moor answered."
+
+    "It came down from the high ground like a shadow given shape—great and black and older than the village, older than the bargain. It did not move like a cat that had escaped a pet keeper. It moved like something that had always been there, watching, waiting."
+
+    "It was not the hunger. It was the thing the hunger had pushed aside to rule the well."
+
+    "The Beast passed through the ring of villagers as if they were mist, and it stood over the open well, and it looked down at the hunger with eyes that had seen the beginning."
+
+    "And it did what the village had never had the courage to do. It refused."
+
+    with flash
+
+    "The hunger screamed—not in fear, but in outrage—and the Beast's refusal tore through it the way the truth tore through a lie. The well cracked, and the dark blazed, and then it was gone."
+
+    "The Beast stood a moment longer, black against the grey dawn, and it looked at me. And I understood, without a word, what the old margin had meant. *The beast remembers the bargain.* It had been waiting, all these years, for a Thorne to come and break it."
+
+    "Then it turned, and went back to the moor, and was gone."
+
+    jump ending_beast
+
+label ending_unmaking:
     scene bg hallway
     with slow_fade
 
     "We left Grimshade at dawn. The rain had stopped, and the road was clear, and we did not look back."
 
     "I do not think the village will ever be quite the same. But I do not know if that is a comfort, or a wound. Some things, once seen, cannot be unseen—and the village has seen itself now, in the light of what it was willing to do."
+
+    "The child was safe, and the well was only a well again, and the hunger was gone. But it had cost the village its innocence, and I did not know if that was a price worth the bargain they had kept for two hundred years."
 
     "We drove in silence for a long time. The hills greyed and fell away behind us, and the world opened out into the ordinary morning of the rest of the country, where children went to school and wells were only wells."
 
@@ -919,9 +968,47 @@ label harvest5:
         "I did not say it, but I thought it, in the steady warmth of her beside me: this was the truest thing I had ever built. Not the mansion, not the name. The trust that let me put down my armour when it mattered, and let her carry the load with me."
         "She did not look at me. But I felt her hand tighten on mine, and I knew she had heard it anyway."
 
-    if beast_seen or beast_clue:
-        "And for a long moment, as the moors slid past the carriage window, I thought of the black shape on the grey skyline, and the ledger's old margin note, and I did not believe it was an escaped pet at all."
+    jump ending_epilogue
 
+label ending_beast:
+    scene bg hallway
+    with slow_fade
+
+    "We left Grimshade at dawn, and I did not look back at the well."
+
+    "The hunger was gone, and the village was silent, and on the high ground, watching the road, I saw the Beast once more—a black shape against the grey, keeping its own watch."
+
+    "The villagers would tell the story of the Beast for another generation, and they would not tell the truth of it. They would say the big cat had come and gone, a wild thing. And that was the kinder story, and I let them have it."
+
+    "But I knew. The Beast had not been an escaped pet. It had been the guardian of the old bargain, waiting all these years, and it had done what the village could not. It had refused."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "You are thinking of it."
+
+    e "The Beast. Yes. They will tell themselves it was a wild cat, and that is the story they need. But I saw it refuse. And I saw what it was."
+
+    n "And what was it?"
+
+    "I looked at her, and in the grey light, I tried to put words to it."
+
+    e "The thing the hunger had pushed aside. The guardian that kept the bargain, waiting for a Thorne who would come to break it. It did not want the village fed. It wanted the bargain ended."
+
+    n "And you ended it. Not with the words that unmake, but with the trust to call what you did not understand."
+
+    e "I trusted you, Neith. You were the one who believed the Beast was real, when I wanted to call it a story."
+
+    "She looked at me, and in the light, her eyes were soft."
+
+    n "And that is why I am here, Eleanor. Because you trust me enough to see what is hidden."
+
+    "We drove on into the morning, and behind us, the moors held their secret, and the Beast kept its watch."
+
+    jump ending_epilogue
+
+label ending_epilogue:
     scene black
     with slow_fade
 
