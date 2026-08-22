@@ -16,6 +16,7 @@ define sch = Character("The Schoolteacher", color="#6a8a8a")
 define old = Character("Old Nan", color="#a8a8a8")
 define inn = Character("The Innkeeper", color="#c8a2c8")
 define om = Character("The Old Man", color="#a8a8a8")
+define pat = Character("A Nervous Patron", color="#8a8a6a")
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES
@@ -61,6 +62,11 @@ label episode_five:
     $ truth_miller = False
     $ truth_school = False
     $ truth_nan = False
+    $ saw_chapel = False
+    $ saw_ledgers = False
+    $ saw_moors = False
+    $ beast_seen = False
+    $ beast_clue = False
 
     scene bg hallway
     with slow_fade
@@ -159,6 +165,30 @@ label episode_five:
     "The fire popped. The innkeeper straightened, and the moment broke."
 
     inn "Enough of that. You will want beds, and you will want them before the road turns cold. I will have the girl make up the rooms."
+
+    "She had turned to go when a man by the fire—younger than the first, with the quick, nervous look of a man who did not like the dark—spoke up."
+
+    pat "Begging your pardon, but if you are bound for the moors, there is another thing you should know. They have seen the Beast again."
+
+    "A low murmur ran around the room. Not fear, exactly. Something older, and more careful."
+
+    e "The Beast?"
+
+    "The innkeeper paused, and her face was hard to read."
+
+    inn "The Beast of the moors, they call it. A great black cat, bigger than any dog, seen on and off since my grandmother's time. There was a while in the last century when folk said the big cats were all let loose, when it became against the law to keep them. That is the sensible story."
+
+    "She looked at me, and her voice dropped."
+
+    inn "But there is another story. They say it is not a cat at all, not the kind you can catch. They say it has been on the moors longer than the village, and that it only shows itself when something in the county is about to turn."
+
+    e "Turn?"
+
+    inn "Turn sour. Turn strange. They say it watched, before the last Harvest, and that it has been seen of late, on the road between here and Grimshade."
+
+    "I dismissed it as I would any moorland tale — the sort of story that grows in the telling, and that every county has. But Neith was looking at the fire, and her hand was still."
+
+    "I said nothing. But I remembered it. The Beast of the moors, watching the road to Grimshade."
 
     "She led us up the narrow stairs, and at the top she paused, a little apologetic."
 
@@ -293,11 +323,8 @@ label episode_five:
 
     "We turned toward the village, and the old voices."
 
-    # --- Investigation loop: visit the three old voices in any order ---
+    # --- Investigation loop: the truth-givers and optional routes ---
     label ep5_investigate:
-        if truth_miller and truth_school and truth_nan:
-            jump ep5_all_truths
-
         menu:
             "Talk to the miller about the bargain" if not truth_miller:
                 jump ep5_miller
@@ -305,6 +332,12 @@ label episode_five:
                 jump ep5_school
             "Talk to Old Nan about the truth" if not truth_nan:
                 jump ep5_nan
+            "Investigate the locked chapel" if not saw_chapel:
+                jump ep5_chapel
+            "Search the schoolteacher's ledgers" if not saw_ledgers:
+                jump ep5_ledgers
+            "Walk the edge of the moors" if not saw_moors:
+                jump ep5_moors
             "You have learned all the truths — go to the well" if truth_miller and truth_school and truth_nan:
                 jump ep5_all_truths
 
@@ -444,6 +477,122 @@ label episode_five:
         $ truth_nan = True
 
         "Old Nan's truth, the last of the three, settled into me."
+
+        jump ep5_investigate
+
+    label ep5_chapel:
+        scene bg chapel
+        with slow_fade
+
+        "The chapel stood at the edge of the village, a small, squat building of grey stone that the moss had been reclaiming for generations. The door was heavy and new, and it was locked from the outside—a latch and a padlock, the kind you put on a place you mean to keep people out of, not in."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        with dissolve
+
+        n "A church that locks its door from the outside."
+
+        e "A church that has something to keep."
+
+        "I tested the padlock. It held. But at the base of the door, worn into the stone by years of feet, I saw a small gap, and through it, the darkness of the nave."
+
+        "I knelt and looked in."
+
+        "It was not a chapel for worship. The pews had been cleared to the walls, and the floor was bare stone. And at the far end, where the altar should have been, there was only a single iron ring set into the floor, and a trapdoor."
+
+        n "What do you see, Eleanor?"
+
+        e "A trapdoor, Neith. Under where the altar used to be."
+
+        "She was silent for a long moment."
+
+        n "They keep the harvest somewhere it can be hidden. Not in the village. Beneath the altar, where the village could not look at it."
+
+        "I stood, and looked at the locked door."
+
+        e "The miller was right. This is where they hold her."
+
+        $ saw_chapel = True
+
+        "I marked the place in my mind, and we left the chapel to its silence."
+
+        jump ep5_investigate
+
+    label ep5_ledgers:
+        scene bg village
+        with slow_fade
+
+        "The schoolteacher's ledger was not in the church. It was in the vestry, in a locked press she had given us the key to—as if she had been waiting, all these years, for someone to ask."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        with dissolve
+
+        "The pages were old and yellowed, and the handwriting changed across the decades—different hands, different generations, but always the same record. A name, a date, a single word: *taken.*"
+
+        n "Two hundred years of names, Eleanor. All of them young. All of them the same season."
+
+        e "And no cause of death. No coroner. No record at all, beyond the name and the word."
+
+        n "That is the whole crime, in a ledger. The village did not even keep the truth of what it did. It kept only enough to count."
+
+        "I turned the pages slowly, reading the names. And then I stopped, on an entry far older than the others, its ink brown with age."
+
+        "It was not a name. It was a note, in a margin, in a hand that was different again."
+
+        e "Neith. Read this."
+
+        "She bent to look. The margin read, in fading letters: *the beast remembers the bargain; when the child does not feed, the dark opens.*"
+
+        n "The beast. Eleanor—the moors."
+
+        "I looked at the schoolteacher's ledger, and I felt the thin thread, the one that had been pulled at the inn, tighten. The Beast was not a story. It was in the records."
+
+        $ saw_ledgers = True
+        $ beast_clue = True
+
+        "We put the ledger back, and the names of twenty-nine children seemed to follow us out into the grey light."
+
+        jump ep5_investigate
+
+    label ep5_moors:
+        scene bg village id
+        with slow_fade
+
+        "The moors beyond Grimshade were a great grey emptiness, the sky and the heather meeting in a low, heavy line. The wind moved over them, and nothing else did. It was a place that had never been tamed, and did not intend to be."
+
+        show eleanor_neutral at left
+        show neith_neutral at right
+        with dissolve
+
+        n "There is no path here."
+
+        e "There is. Look."
+
+        "A track, worn into the heather, faint but unmistakable, running from the edge of the village toward the heart of the moor."
+
+        "We followed it for a while, and the village fell away behind us, and the moor closed in, and the silence grew until it was a thing you could almost touch."
+
+        "And then, ahead, at the edge of a rise, something moved."
+
+        "It was there for a moment—a shape, black against the grey, larger than any dog, moving with a slowness that was not a dog's, not a fox's. It stood at the crest of the rise, and it looked back at us."
+
+        "And then it was gone, and the moor was empty, and the only sign it had been there at all was the ringing silence it left behind."
+
+        "Neith was still."
+
+        n "You saw it."
+
+        e "I saw a big cat, Neith. The kind of thing that gets loose and is never caught."
+
+        n "And is never seen, either, in the daylight, watching a road."
+
+        "I said nothing. But I had seen it, black against the grey, and I had felt, across that wide empty space, that it was not the thing the villagers feared. It was something that had been watching the village for a long, long time."
+
+        $ saw_moors = True
+        $ beast_seen = True
+
+        "We walked back to the village, and the moor seemed to watch us go."
 
         jump ep5_investigate
 
