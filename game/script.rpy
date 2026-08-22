@@ -250,7 +250,7 @@ label episode_five:
 
     e "You asked us to. The letter was very plain."
 
-    m "The village does not talk about it, ladies. But it is due. It is due tonight, and they have taken her."
+    m "The village does not talk about it, ladies. But it is due. It is due tonight. They took her six weeks ago and they have been keeping her since—the way they always have, when the harvest nears."
 
     n "Taken who?"
 
@@ -543,11 +543,19 @@ label episode_five:
 
         e "Neith. Read this."
 
-        "She bent to look. The margin read, in fading letters: *the beast remembers the bargain; when the child does not feed, the dark opens.*"
+        "She bent to look, and the lamplight caught her face as she read the fading letters. When she straightened, her voice was very quiet."
 
-        n "The beast. Eleanor—the moors."
+        n "The beast remembers the bargain; when the child does not feed, the dark opens."
 
-        "I looked at the schoolteacher's ledger, and I felt the thin thread, the one that had been pulled at the inn, tighten. The Beast was not a story. It was in the records."
+        "The words fell into the room like the first crack in ice. It was not a record. It was a warning—written by someone who had known the truth, and had hidden it where the village would not look, in a column of names and dates."
+
+        e "Neith. That is not about the harvest. That is about what the harvest is *for*."
+
+        n "No. It is about what the village does not understand it is keeping. The silence holds the stone, Eleanor. And the stone holds the dark."
+
+        "I looked at the margin note again, at the hand that had written it—a hand that had known it would never be read, and had written it anyway."
+
+        "The Beast was not a story. It was in the records. It had been there all along."
 
         $ saw_ledgers = True
         $ beast_clue = True
@@ -727,11 +735,11 @@ label well_opened:
 label follow_the_child:
     "I did not look at the well. I looked at the vicar, and I made a choice."
 
-    e "You will not take her tonight. Where have you been?"
+    e "You will not deliver her to the well tonight. You have been keeping her where?"
 
-    v "The harvest is taken the night before the first frost."
+    v "The harvest is carried to the well the night before the first frost. That is the way it has always been."
 
-    n "Tonight is the first frost."
+    n "Tonight is the first frost. And she has been kept, all these six weeks, waiting for it."
 
     "The vicar said nothing. But his eyes went to a path that ran out of the square, over a low stone wall, and into the dark of the valley."
 
@@ -739,7 +747,7 @@ label follow_the_child:
 
     "The child was huddled in the corner. She did not scream when she saw us. She had stopped hoping for rescue a long time ago."
 
-    "The sight of her, small and grey in the lamplight, had a way of taking the words out of me. I was not a woman who was easily undone. But she had been kept here, counted, and she knew it."
+    "The sight of her, small and grey in the lamplight, had a way of taking the words out of me. I pressed my hand flat against the cold wall until the stone bit, to keep my own from trembling. She had been kept here, counted, and she knew it."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -755,7 +763,7 @@ label follow_the_child:
             "I let her. It was not a surrender. It was a trusting."
             "Neith knelt, and the child looked at her, and something in the small, grey face eased, just a little."
         "Keep my hand on it myself — I do it alone":
-            "I knelt myself, and I held the child's hand, and I did not look away. It was what I did, and what I was."
+            "I knelt myself, and I took the child's hand in mine, and I did not look away. It was what I did, and what I was."
 
     e "We are going to get you out of here. Do you understand?"
 
@@ -767,12 +775,17 @@ label follow_the_child:
 
     ch "Everyone. It is everyone, but no one. They are the village. And they will not let you take me, because if I go, it will be hungry."
 
-    scene black
-    with slow_fade
+    "I looked at her, small and grey and certain she would die here. And I said the only thing that mattered."
 
-    centered "{size=+6}{color=#d4a373}THE CHILD{/color}{/size}"
+    e "What is the first thing you will see, when you are out of here?"
 
-    pause 1.5
+    "She blinked. It was the first surprise in her face since we had come in."
+
+    ch "The sky. I have not seen the sky, since they brought me here. They keep us in the dark, so the well knows us by it."
+
+    e "Then that is the first thing you will see. I promise you that."
+
+    "For the first time, something in her face, small and grey, flickered like a candle catching."
 
     jump the_harvest
 
@@ -823,6 +836,12 @@ label face_the_village:
     m "She is right. We are so afraid of the thing we made we will not see a child. And I will not be afraid anymore."
 
     "One voice. And then another. And the ring of faces began to break, not all at once, but in pieces, like a wall that has been holding too much."
+
+    "And then I saw the vicar. He had not moved, had not spoken. He stood at the centre of it all, the man who had kept the peace of the bargain, and he was watching his village refuse it."
+
+    "His mouth worked, as if to call them back, to hold the line he had held all his life. But no words came. He had spent so long being the keeper of the silence that, in the moment it broke, he had nothing left to say."
+
+    "He lowered his eyes. And I understood that the village's monster was not the man—it was the keeping. And now that it was refused, he was only an old man who had believed, all his life, that there was no other way."
 
     if neith_trust >= 2:
         "And through the breaking of them, Neith moved to stand with me, not behind me. She had been watching, as she always watched, and now she lent me the weight of her certainty."
@@ -884,7 +903,9 @@ label unmake_the_hunger:
 label the_beast_path:
     "I did not speak the words that unmake. I stepped to the edge of the well, and I did not name the hunger."
 
-    "I called the thing that the village had been afraid to name, and that I had seen on the moor, black against the grey."
+    "The words were there, in my memory, the jaguar's gift from the temple—the words that had unmade the older hunger. But I had used them once, and I had felt what they cost. They did not heal. They unmade. They would end the thing in the well, but they would end it the way you end a wound, by cutting it away—and I did not know what else they might cut."
+
+    "So I did not reach for the words. I called, instead, the thing that the village had been afraid to name, and that I had seen on the moor, black against the grey."
 
     "I called the Beast."
 
@@ -994,7 +1015,9 @@ label ending_beast:
 
     "I looked at her, and in the grey light, I tried to put words to it."
 
-    e "The thing the hunger had pushed aside. The guardian that kept the bargain, waiting for a Thorne who would come to break it. It did not want the village fed. It wanted the bargain ended."
+    e "The thing the hunger had pushed aside. The guardian that kept the bargain—or perhaps only ever the thing that refused. I do not know that it wanted anything at all. I only know it refused what the village could not."
+
+    "I did not look at the moor again. It is better, I think, to leave some things on the high ground, watching, and not to try to name them into tame things."
 
     n "And you ended it. Not with the words that unmake, but with the trust to call what you did not understand."
 
