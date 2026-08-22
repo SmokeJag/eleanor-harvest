@@ -67,6 +67,7 @@ label episode_five:
     $ saw_moors = False
     $ beast_seen = False
     $ beast_clue = False
+    $ neith_trust = 0
 
     scene bg hallway
     with slow_fade
@@ -646,6 +647,24 @@ label episode_five:
 
     v "Then we have two choices. And I promise you, ladies, you will not like either of them."
 
+    "The vicar's words hung in the cold air. Beside me, I felt Neith watching him, reading the man the way she read everything—through the years she had spent in the Duat, weighing what people truly were."
+
+    n "He is afraid, Eleanor. Not of the thing in the well. Of the moment it is refused. He has been waiting his whole life for someone to refuse it, and he does not know how to go on after that."
+
+    "She had seen it. I could trust that, or I could go on my own reading."
+
+    menu:
+        "Trust Neith's read — let her guide this":
+            $ neith_trust += 1
+            "I trusted her. I always trusted her, even when my own mind wanted to race ahead."
+            e "Then we refuse it. And whatever follows, we refuse it together."
+        "Go with my own reading — I know this place now":
+            "I did not argue with her. But I trusted my own eyes over her instinct."
+            e "Let us see what is really in the well first. Then we decide."
+
+    if neith_trust >= 1:
+        n "Together, then."
+
     menu:
         "Open the well — face what the village feeds":
             jump well_opened
@@ -720,9 +739,23 @@ label follow_the_child:
 
     "The child was huddled in the corner. She did not scream when she saw us. She had stopped hoping for rescue a long time ago."
 
+    "The sight of her, small and grey in the lamplight, had a way of taking the words out of me. I was not a woman who was easily undone. But she had been kept here, counted, and she knew it."
+
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
+
+    n "You do not have to be the strong one in every room, Eleanor. I can sit with her. You watch the door."
+
+    "She offered me the steadiness of a century. I could take it, or I could hold myself together the way I always had."
+
+    menu:
+        "Let Neith sit with the child — trust her steadiness":
+            $ neith_trust += 1
+            "I let her. It was not a surrender. It was a trusting."
+            "Neith knelt, and the child looked at her, and something in the small, grey face eased, just a little."
+        "Keep my hand on it myself — I do it alone":
+            "I knelt myself, and I held the child's hand, and I did not look away. It was what I did, and what I was."
 
     e "We are going to get you out of here. Do you understand?"
 
@@ -790,6 +823,11 @@ label face_the_village:
     m "She is right. We are so afraid of the thing we made we will not see a child. And I will not be afraid anymore."
 
     "One voice. And then another. And the ring of faces began to break, not all at once, but in pieces, like a wall that has been holding too much."
+
+    if neith_trust >= 2:
+        "And through the breaking of them, Neith moved to stand with me, not behind me. She had been watching, as she always watched, and now she lent me the weight of her certainty."
+        n "You have fed it because you were afraid. But fear is a choice you can put down, as you are putting it down now, one of you at a time."
+        "Her voice carried, and I saw more faces turn—because it was not a stranger telling them to be brave. It was a woman who had spent a century being brave, and had the scars to prove it."
 
     with flash
 
@@ -876,6 +914,13 @@ label harvest5:
     n "We already do."
 
     "We drove on into the morning, the two of us, and the road ahead was long, and the world was heavy, and it did not matter, because we were not alone in it."
+
+    if neith_trust >= 2:
+        "I did not say it, but I thought it, in the steady warmth of her beside me: this was the truest thing I had ever built. Not the mansion, not the name. The trust that let me put down my armour when it mattered, and let her carry the load with me."
+        "She did not look at me. But I felt her hand tighten on mine, and I knew she had heard it anyway."
+
+    if beast_seen or beast_clue:
+        "And for a long moment, as the moors slid past the carriage window, I thought of the black shape on the grey skyline, and the ledger's old margin note, and I did not believe it was an escaped pet at all."
 
     scene black
     with slow_fade
