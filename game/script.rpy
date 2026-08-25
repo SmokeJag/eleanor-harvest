@@ -1014,6 +1014,8 @@ label ending_unmaking:
         "I did not say it, but I thought it, in the steady warmth of her beside me: this was the truest thing I had ever built. Not the mansion, not the name. The trust that let me put down my armour when it mattered, and let her carry the load with me."
         "She did not look at me. But I felt her hand tighten on mine, and I knew she had heard it anyway."
 
+    "I did not look at the moor again. It is better, I think, to leave some things on the high ground, watching, and not to try to name them into tame things."
+
     jump ending_epilogue
 
 label ending_beast:
@@ -1051,6 +1053,14 @@ label ending_beast:
     "She looked at me, and in the light, her eyes were soft."
 
     n "And that is why I am here, Eleanor. Because you trust me enough to see what is hidden."
+
+    "I thought of the words I had not spoken—the unmaking I had set aside to call the Beast instead. And I understood that I could only have done it because of her."
+
+    e "I called it alone, Neith. But I could only because you taught me a frightened thing can still refuse. You were the one who believed I could, when I wanted to call myself a story."
+
+    "She was quiet for a long moment. Then she reached across and took my hand."
+
+    n "Then we are both the thing that refused. And that is no small thing to be."
 
     "We drove on into the morning, and behind us, the moors held their secret, and the Beast kept its watch."
 
