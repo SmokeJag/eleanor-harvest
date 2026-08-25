@@ -523,7 +523,7 @@ label episode_five:
         scene bg village
         with slow_fade
 
-        "The schoolteacher's ledger was not in the church. It was in the vestry, in a locked cabinet—but the lock was not a hard one, and the key hung on a hook beside it, as if it had been left there for someone who meant to look."
+        "The schoolteacher's ledger was not in the church. It was in the vestry, in a large walnut press—a tall, heavy cabinet for keeping records—but the lock was not a hard one, and the key hung on a hook beside it, as if it had been left there for someone who meant to look."
 
         show eleanor_neutral at left
         show neith_neutral at right
