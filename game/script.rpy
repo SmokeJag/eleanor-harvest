@@ -381,6 +381,10 @@ label episode_five:
 
         mil "We have kept it because we were afraid not to. And because it was easier, each time, to tell ourselves it was the only way. That is the lie at the heart of it, ladies. It was never the only way. It was just the easiest."
 
+        "He was quiet for a moment, staring at the fire. When he spoke again, his voice was lower."
+
+        mil "On the night, they walk the well widdershins—against the sun, the way the bargain was first made. That is the ritual of it. Three turns the wrong way round, and the debt is paid. I have seen it done since I was a boy, and I have never once seen them turn the right way."
+
         "He reached into his coat and drew out an old, creased ledger."
 
         mil "The seal on the well—it is not held by weight. It is held by the *debt*. The first bargain set a price, and the stone was set to keep it. That is the first truth of the well: you cannot lift it by force. Only by the truth."
@@ -568,7 +572,7 @@ label episode_five:
         scene bg village id
         with slow_fade
 
-        "The moors beyond Grimshade were a great grey emptiness, the sky and the heather meeting in a low, heavy line. The wind moved over them, and nothing else did. It was a place that had never been tamed, and did not intend to be."
+        "The moors beyond Grimshade were a great grey emptiness, the sky and the heather meeting in a low, heavy line. A haar lay over the high ground—a cold, clinging mist that swallowed the horizon—and the wind moved through it, and nothing else did. It was a place that had never been tamed, and did not intend to be."
 
         show eleanor_neutral at left
         show neith_neutral at right
@@ -703,7 +707,7 @@ label well_opened:
 
     with flash
 
-    "The seal rose from the well as if it were no heavier than a word, and the smell came up out of it. It was not the smell of water. It was the smell of something that had been fed for a very long time and had never been cleaned."
+    "The seal rose from the well as if it were no heavier than a word, and a miasma came up out of it—a thick, foul mist that hung in the air. It was not the smell of water. It was the smell of something that had been fed for a very long time and had never been cleaned."
 
     "The walls of the well went down and down, and at the bottom, glinting faintly, was a thing that was not a stone."
 
