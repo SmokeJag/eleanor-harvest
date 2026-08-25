@@ -726,11 +726,11 @@ label well_opened:
     scene black
     with slow_fade
 
-    centered "{size=+6}{color=#d4a373}THE CHILD{/color}{/size}"
+    centered "{size=+6}{color=#d4a373}THE WELL{/color}{/size}"
 
     pause 1.5
 
-    jump the_harvest
+    jump harvest_open
 
 label follow_the_child:
     "I did not look at the well. I looked at the vicar, and I made a choice."
@@ -787,32 +787,69 @@ label follow_the_child:
 
     "For the first time, something in her face, small and grey, flickered like a candle catching."
 
-    jump the_harvest
+    scene black
+    with slow_fade
 
-label the_harvest:
+    centered "{size=+6}{color=#d4a373}THE CHILD{/color}{/size}"
+
+    pause 1.5
+
+    jump harvest_child
+
+label harvest_open:
     scene bg village id
     with slow_fade
 
-    "The square had filled. Not with a crowd. With a silence. Every house had sent a face, and every face was turned toward the well, and none of them was looking at us."
+    "The square had filled. Not with a crowd. With a silence. Every house had sent a face, and every face was turned toward the open well, and none of them was looking at us."
 
-    "The vicar stood at the centre. And the whole village, it seemed, had been waiting for the moment the well was disturbed to begin."
+    "The child was still captive, somewhere in the dark of the chapel, and the whole village knew it. They had gathered to see the bargain kept—the thing fed, the girl taken, the nine years won."
+
+    "But the well was open now, and the thing in it was awake, and it had felt its name spoken."
 
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
 
-    n "Eleanor. They mean to do it now. They will not wait for the frost."
+    n "Eleanor. They will bring her. They will not wait for the frost."
 
-    v "It has been opened. It must be fed. You have brought the harvest early."
+    v "You have opened it. It must be fed. There is no way back from this but the one that has always been."
 
-    e "The harvest is not a child. It is a name you have given to a thing you are ashamed to do. And every one of you, standing here, knew."
+    "I looked at the open well, and at the village that had kept it fed for two hundred years, and I understood what I had to do. Not to argue with them. To end the thing that made them fear."
 
-    "No one moved. No one looked at me. That was the worst of it. They were not cruel men. They were men who had agreed, together, that not looking was a kindness."
-
-    "And in that was the true horror of it. The thing in the well was not the monster. The monster was the whole village, having decided it could live with the thing in the well, if only it did not have to watch."
+    "The choice was mine. The child was not here to bargain with. It was only the hunger, and me, and what I would do to it."
 
     menu:
-        "Stand against the whole village — make them see the child":
+        "Speak the words that unmake the hunger":
+            jump unmake_the_hunger
+
+        "Call the Beast of the moors" if beast_seen and beast_clue and neith_trust >= 2:
+            jump the_beast_path
+
+        "Unmake the hunger (only way, if the Beast path is closed)" if not (beast_seen and beast_clue and neith_trust >= 2):
+            jump unmake_the_hunger
+
+    jump unmake_the_hunger
+
+label harvest_child:
+    scene bg village id
+    with slow_fade
+
+    "The child in my arms, and the village in the square, and every face turned toward the thing I carried."
+
+    "They had gathered to take her. And she was in my arms, small and grey and no longer waiting to be taken."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "They will not let you leave with her, Eleanor. Not while they still fear the well."
+
+    e "Then I give them something else to fear."
+
+    "I stood in the middle of them, and I did not bargain with the thing in the well. I bargained with the village."
+
+    menu:
+        "Stand against the village — make them see the child":
             jump face_the_village
 
         "Take the child and run — get her out of the valley":
@@ -821,11 +858,11 @@ label the_harvest:
     return
 
 label face_the_village:
-    "I walked into the middle of them. The ones who had come to feed the well. I carried the child, and I made them look at her."
+    "I walked into the middle of them, the child in my arms, and I made them look at her."
 
     e "This is her. She has a name, and a life, and a future you have decided she does not have. And I will not let you do it."
 
-    "The vicar voice was quiet."
+    "The vicar's voice was quiet."
 
     v "You do not understand. If we do not feed it, it will take everything. The village will starve. The wells will run dry. We have kept this."
 
@@ -848,11 +885,13 @@ label face_the_village:
         n "You have fed it because you were afraid. But fear is a choice you can put down, as you are putting it down now, one of you at a time."
         "Her voice carried, and I saw more faces turn—because it was not a stranger telling them to be brave. It was a woman who had spent a century being brave, and had the scars to prove it."
 
+    "And with the village broken, there was nothing left to protect the well. I walked to its edge, the child still in my arms, and I spoke the words that the jaguar had taught me, the ones that unmake."
+
     with flash
 
-    "And at the moment the village broke, the well behind us opened, and the thing that had been fed came up out of it."
+    "The thing in the well did not know how to refuse a will that was not afraid of it. It came apart slowly, and in pieces, and when it was gone, the well was only a well, and the child was free."
 
-    jump the_well_thing
+    jump ending_unmaking
 
 label run_with_the_child:
     "I did not argue. I took the child's hand, and I ran. Not toward the houses, but away, across the wall, into the dark of the valley, Neith at my side, and the village behind us did not follow."
@@ -867,28 +906,10 @@ label run_with_the_child:
 
     jump ending_epilogue
 
-label the_well_thing:
+label unmake_the_hunger:
     "It came up out of the ground the way rot comes up out of a wound. It did not have a fixed shape—it had the shape of a hunger that had been a name for too long."
 
-    with flash
-
-    "And I saw that I could end it. Not by running, and not by leaving, but by the choice it could not make and the village could not make for me."
-
-    if beast_seen and beast_clue and neith_trust >= 2:
-        "And as I stood at the edge of the well, I remembered the black shape on the moor, and the ledger's old note—*the beast remembers the bargain.* I had dismissed it as a story. But Neith had believed it. And I had trusted her."
-
-        menu:
-            "Speak the words that unmake the hunger":
-                jump unmake_the_hunger
-            "Call the Beast of the moors":
-                jump the_beast_path
-
-        jump unmake_the_hunger
-    else:
-        jump unmake_the_hunger
-
-label unmake_the_hunger:
-    "I walked to the edge of the well, and I spoke the words that the jaguar had taught me, the ones that unmake."
+    "And I walked to the edge of the well, and I spoke the words that the jaguar had taught me, the ones that unmake."
 
     "And the thing in the well, that had fed for two hundred years, did not know how to refuse a will that was not afraid of it."
 
