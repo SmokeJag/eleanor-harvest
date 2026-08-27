@@ -1,5 +1,5 @@
 # 🐆 SmokeJaguar Studios — Website Content Pack
-> Ready-to-paste copy for eleanorandneith.wordpress.com
+> Ready-to-paste copy for eleanorandneith.com
 > **Draft:** for Hermie M3 to place onto the site
 > **Studio:** SmokeJaguar Studios
 
