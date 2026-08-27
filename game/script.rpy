@@ -92,7 +92,7 @@ label episode_five:
 
     e "The kind the village does not call by its name."
 
-    "The letter was postmarked from a village in Somerset called Grimshade. I had never heard of it, and that, more than anything, unsettled me. Somerset was full of old names and older stories, and a village that had kept itself out of the maps for two hundred years was a village that had something to hide."
+    "The letter was postmarked from a village in Somerset called Grymshade. I had never heard of it, and that, more than anything, unsettled me. Somerset was full of old names and older stories, and a village that had kept itself out of the maps for two hundred years was a village that had something to hide."
 
     n "It is more than a day's journey, Eleanor. We will not reach it before nightfall."
 
@@ -129,17 +129,17 @@ label episode_five:
 
     inn "You are a long way from anywhere, ladies. What brings you to the Hanged Man?"
 
-    e "We are bound for Grimshade, in the morning."
+    e "We are bound for Grymshade, in the morning."
 
     "The room went quiet. Not suddenly—the way a room goes quiet when everyone in it decides, at the same moment, not to speak."
 
-    inn "Grimshade. Aye. That is a name we do not say lightly on this road."
+    inn "Grymshade. Aye. That is a name we do not say lightly on this road."
 
     n "Why not?"
 
     "The innkeeper looked at us for a long moment. Then she leaned in, and her voice dropped."
 
-    inn "Because the road to Grimshade is a road that does not like to be travelled, ladies. And the village at the end of it is a village that does not like to be found. There are stories."
+    inn "Because the road to Grymshade is a road that does not like to be travelled, ladies. And the village at the end of it is a village that does not like to be found. There are stories."
 
     e "What stories?"
 
@@ -185,11 +185,11 @@ label episode_five:
 
     e "Turn?"
 
-    inn "Turn sour. Turn strange. They say it watched, before the last Harvest, and that it has been seen of late, on the road between here and Grimshade."
+    inn "Turn sour. Turn strange. They say it watched, before the last Harvest, and that it has been seen of late, on the road between here and Grymshade."
 
     "I dismissed it as I would any moorland tale — the sort of story that grows in the telling, and that every county has. But Neith was looking at the fire, and her hand was still."
 
-    "I said nothing. But I remembered it. The Beast of the moors, watching the road to Grimshade."
+    "I said nothing. But I remembered it. The Beast of the moors, watching the road to Grymshade."
 
     "She led us up the narrow stairs, and at the top she paused, a little apologetic."
 
@@ -220,14 +220,14 @@ label episode_five:
     scene black
     with slow_fade
 
-    "That night, in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grimshade was the only road we were walking."
+    "That night, in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grymshade was the only road we were walking."
 
     "Beside me, Neith slept, and the warmth of her was a steady thing in the cold of the night. Whatever the road held, I would not walk it alone."
 
     scene bg village
     with slow_fade
 
-    "The village was called Grimshade, and it earned the name. It sat in a fold of grey hills like something that had been there too long and meant to stay, its houses crouched around a single square and a well that had not been used in living memory."
+    "The village was called Grymshade, and it earned the name. It sat in a fold of grey hills like something that had been there too long and meant to stay, its houses crouched around a single square and a well that had not been used in living memory."
 
     "The rain did not so much fall as hang. The streets were empty, though it was mid-morning, and the windows we passed were shuttered."
 
@@ -278,7 +278,7 @@ label episode_five:
 
     e "Why would they?"
 
-    m "Because you are not from here. You have not agreed to look away. That is the only thing that has ever made anyone in Grimshade speak."
+    m "Because you are not from here. You have not agreed to look away. That is the only thing that has ever made anyone in Grymshade speak."
 
     scene black
     with slow_fade
@@ -290,11 +290,11 @@ label episode_five:
     scene bg village
     with slow_fade
 
-    "We walked the streets of Grimshade, and the village walked away from us."
+    "We walked the streets of Grymshade, and the village walked away from us."
 
     "It was not a cruelty, not exactly. It was a reflex, worn smooth by generations. A woman gathering washing from a line saw us and turned her back, slowly, as if we were not there. A man mending a fence stopped, looked at the ground, and went inside. The doors did not slam. They simply closed."
 
-    "That was the thing I would come to understand about Grimshade. It did not hate. It did not even fear, not in the way you could name. It had simply learned, a long time ago, that the safest thing to do with a stranger was to become, all at once, a village of empty windows."
+    "That was the thing I would come to understand about Grymshade. It did not hate. It did not even fear, not in the way you could name. It had simply learned, a long time ago, that the safest thing to do with a stranger was to become, all at once, a village of empty windows."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -572,7 +572,7 @@ label episode_five:
         scene bg village id
         with slow_fade
 
-        "The moors beyond Grimshade were a great grey emptiness, the sky and the heather meeting in a low, heavy line. A haar lay over the high ground—a cold, clinging mist that swallowed the horizon—and the wind moved through it, and nothing else did. It was a place that had never been tamed, and did not intend to be."
+        "The moors beyond Grymshade were a great grey emptiness, the sky and the heather meeting in a low, heavy line. A haar lay over the high ground—a cold, clinging mist that swallowed the horizon—and the wind moved through it, and nothing else did. It was a place that had never been tamed, and did not intend to be."
 
         show eleanor_neutral at left
         show neith_neutral at right
@@ -904,7 +904,7 @@ label run_with_the_child:
 
     "We carried her out of the valley, and by morning, we were on the road, and she was free."
 
-    "We did not look back at Grimshade. The hunger was still down there, in the well, and the village would feed it again, or starve it, or find their courage in their own time. That was not a fight we could carry out of the valley with a child in our arms."
+    "We did not look back at Grymshade. The hunger was still down there, in the well, and the village would feed it again, or starve it, or find their courage in their own time. That was not a fight we could carry out of the valley with a child in our arms."
 
     "We had done the one thing we came to do. And we had to trust that was enough."
 
@@ -960,7 +960,7 @@ label ending_unmaking:
     scene bg hallway
     with slow_fade
 
-    "We left Grimshade at dawn. The rain had stopped, and the road was clear, and we did not look back."
+    "We left Grymshade at dawn. The rain had stopped, and the road was clear, and we did not look back."
 
     "I do not think the village will ever be quite the same. But I do not know if that is a comfort, or a wound. Some things, once seen, cannot be unseen—and the village has seen itself now, in the light of what it was willing to do."
 
@@ -1022,7 +1022,7 @@ label ending_beast:
     scene bg hallway
     with slow_fade
 
-    "We left Grimshade at dawn, and I did not look back at the well."
+    "We left Grymshade at dawn, and I did not look back at the well."
 
     "The hunger was gone, and the village was silent, and on the high ground, watching the road, I saw the Beast once more—a black shape against the grey, keeping its own watch."
 
