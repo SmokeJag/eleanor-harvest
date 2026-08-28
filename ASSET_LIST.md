@@ -42,6 +42,7 @@
 | 2 | `bg village id` | **The Square / the well** | The village square with the capped stone well at its centre. Used 5× — the key location. | ☐ |
 | 3 | `bg inn` | **The Hanged Man** | Warm timbered inn interior, great hearth fire, amber lamplight, low murmur of a room. | ☐ |
 | 4 | `bg chapel` | **The Chapel** | Small squat grey-stone chapel, locked door, trapdoor under the altar. | ☐ |
+| 5 | `bg_moors` | **The Moors** | The grey high-ground beyond Grymshade — haar mist, heather, a low heavy skyline. Where the Beast is seen at the crest. | ☐ |
 
 *(Already done — no need to re-render: `bg mansion_ext`, `bg hallway`, `bg library` are the refurbished mansion from the Mansion Mysteries.)*
 
