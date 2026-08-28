@@ -9,7 +9,7 @@
 | Asset type | Resolution | Format | Notes |
 |-----------|-----------|--------|-------|
 | **Character sprites** | 720 × 1080 | **PNG with transparency** (alpha) | Full-body, standing, facing camera |
-| **Backgrounds** | 1920 × 1080 | **WEBP** (quality 90) | No transparency needed |
+| **Backgrounds** | 1920 × 1080 | **WEBP** (quality 90) | No transparency needed. *(Target resolution. The existing 1024×576 mansion backgrounds are a known interim state — re-render at 1920×1080 when convenient.)* |
 | **Style** | — | — | Semi-realistic Daz render, Gothic-tinged, deep blues + sharp shadows + warm lamplight (the "cozy-dark" look) |
 
 **Consistency rule:** Lock Eleanor's and Neith's face/hair/outfit as a **saved Daz scene** first, then reuse it for every render. Do NOT re-model them each time — that's how characters drift.
